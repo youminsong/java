@@ -1,0 +1,26 @@
+//8) for문을 이용하여 아래와 같이 출력하시오
+//    *
+//   **
+//  ***
+// ****
+//*****
+#include <stdio.h>
+
+int main(void)
+{
+	int x, y;
+
+	for (x = 0; x < 5; x++)
+	{
+		for (y = 0; y < 4 - x; y++)
+		{
+			printf(" ");
+		}
+		for (y = 0; y < x + 1; y++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+}

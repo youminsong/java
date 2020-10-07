@@ -1,0 +1,16 @@
+//3) 실수를 입력받아 정수부분과 소수부분을 따로 출력하시오 ex) input: 4.52 / output : 4   0.52
+#include<stdio.h>
+
+int main(void)
+{
+	float input;
+
+	printf("실수를 입력해주세요.: ");
+	scanf_s("%f", &input);
+
+	printf("정수부분: %d\n",(int)input);
+	printf("소수부분: %f\n", (float)input - (int)input);
+
+	return 0;
+
+}

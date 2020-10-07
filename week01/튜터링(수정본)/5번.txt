@@ -1,0 +1,31 @@
+//5) 소수인지를 판별해주는 함수를 작성하시오.
+#include <stdio.h>
+int main(void) 
+{
+    int a, s = 2;
+    int e;
+
+    printf("정수를 입력해주세요: ");
+    scanf_s("%d", &a);
+    e = a - 1;
+
+    while (1)
+    {
+        if (s <= e) 
+        {
+            if (a % s == 0) 
+            {
+                printf("소수아님");
+                break;
+            }
+            else {
+                s++;
+            }
+        }
+        else {
+            printf("소수");
+            break;
+        }
+    }
+}
+
