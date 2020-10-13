@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+double gety(int x, int gender, double standard, int kg, double y);
+int main(void) {
+	int x;    //음주량
+	double y=0.0;       //술농도
+	int kg;        //체중
+	int gender;    //성별
+	double p=0.0;       //알콜농도
+	double standard=0.0;
+
+	printf("<입력>\n");
+	printf("음주량 = ");
+	scanf_s("%d", &x);
+	printf("술의 농도 = ");
+	scanf_s("%lf", &y);
+	printf("체중 = ");
+	scanf_s("%d", &kg);
+	printf("성별<여자는 1, 남자는 2> = ");
+	scanf_s("%d", &gender);
+
+	//printf("%d %lf %d %d", x, y, kg, gender);
+	p = gety(x, gender, standard, kg, y);
+	printf("<출력>\n");
+	printf("30분후: %.4lf\n", p);
+	for (int i = 1; i <= 5; i++) {
+		printf("+%d시간 후: %.4lf\n", i, (p - (0.03 * i)));
+
+	}
+	
+	return 0;
+}
+double gety(int x, int gender, double standard, int kg, double y) {
+	double output = 0.0;
+	if (gender == 1) {
+		standard = 0.6;
+	}
+	else {
+		standard = 0.7;
+		output = (x * y * 0.7984) / (kg * standard * 10);
+	}
+
+	return output;
+
+}
